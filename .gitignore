@@ -1,0 +1,10 @@
+# Chrome profile - dados locais do navegador, não commitar
+BotChromeProfile/
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
