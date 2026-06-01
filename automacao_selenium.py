@@ -115,19 +115,11 @@ def processar_abas(driver):
         except:
             continue
     if not abas_validas:
-        print("  Nenhuma aba válida.")
+        print("  Nenhuma aba valida.")
         return 0
-    aba_principal = None
-    for h in abas_validas:
-        try:
-            driver.switch_to.window(h)
-            if "madeiramadeira.com.br" in driver.current_url:
-                aba_principal = h
-                break
-        except:
-            continue
+    aba_principal = abas_validas[0]
     if not aba_principal:
-        print("  ERRO: Não encontrou aba da MadeiraMadeira.")
+        print("  ERRO: Nenhuma aba de produto encontrada.")
         return 0
     outras = [h for h in abas_validas if h != aba_principal]
     driver.switch_to.window(aba_principal)
